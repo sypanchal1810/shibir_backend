@@ -9,5 +9,5 @@
   "proseWrap": "always",
   "bracketSameLine": false,
   "arrowParens": "avoid",
-  "parser":"typescript"
+  "parser": "typescript"
 }

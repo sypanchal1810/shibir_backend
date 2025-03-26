@@ -7,6 +7,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 import { UserSchema } from 'src/user/schema/user.schema';
 import { JwtStrategy } from './strategies/jwt.strategy';
+import { MailService } from 'src/mail/mail.service';
 
 @Module({
   imports: [
@@ -23,7 +24,7 @@ import { JwtStrategy } from './strategies/jwt.strategy';
       }),
     }),
   ],
-  providers: [AuthService, JwtStrategy],
+  providers: [AuthService, JwtStrategy, MailService],
   controllers: [AuthController],
   exports: [JwtStrategy, PassportModule],
 })

@@ -14,6 +14,10 @@ export class SignupDto {
   lastName: string;
 
   @IsNotEmpty()
+  @IsString()
+  gender: string;
+
+  @IsNotEmpty()
   @IsEmail()
   @Matches(/^[a-zA-Z0-9_.-]+@[a-zA-Z0-9.]+[a-zA-Z]{2,5}$/g, { message: 'Invalid email format' })
   email: string;

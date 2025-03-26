@@ -2,7 +2,7 @@
 import eslint from '@eslint/js';
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
 import globals from 'globals';
-import tseslint from 'typescript-eslint';
+import tseslint, { parser } from 'typescript-eslint';
 
 export default tseslint.config(
   {
@@ -41,6 +41,14 @@ export default tseslint.config(
           endOfLine: 'auto',
           parser: 'typescript',
           trailingComma: 'all',
+          overrides: [
+            {
+              files: '*.hbs',
+              options: {
+                parser: 'html',
+              },
+            },
+          ],
         },
       ],
       '@typescript-eslint/no-explicit-any': 'off',
